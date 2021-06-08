@@ -20,14 +20,23 @@
 <body>
     <div id="app">
     {{ message }}
-          <div class="cell"><p>1</p></div>
+          <!--<div lass="cell"><p>1</p></div>-->
+            <div v-for="i in rows" style="display: flex; content: wrap;">
+        <div v-for="j in columns" style="display: flex; content: wrap;">
+            <div class="cell">
+                {{i}},{{j}}
+            </div>
+        </div>
+    </div>
     </div>
 
     <script>
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'Powodzenia'
+            message: 'Powodzenia',
+                        rows: 10,
+                        columns: 10,
         }
     })
     </script>
