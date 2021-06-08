@@ -14,6 +14,10 @@
             border-radius: 10px;
             margin: 0 10px 10px 0;
         }
+         .active{
+            background-color: red;
+            color: white;
+        }    
     </style>
     <script src="https://unpkg.com/vue"></script>
 </head>
@@ -23,7 +27,7 @@
           <!--<div lass="cell"><p>1</p></div>-->
             <div v-for="i in rows" style="display: flex; content: wrap;">
         <div v-for="j in columns" style="display: flex; content: wrap;">
-            <div class="cell">
+            <div class="cell"> v-bind:class = "(active===`${i},${j}`) ? 'active':'default'">
                 {{i}},{{j}}
             </div>
         </div>
@@ -37,6 +41,7 @@
             message: 'Powodzenia',
                         rows: 10,
                         columns: 10,
+            active:"1,1"
         }
     })
     </script>
